@@ -34,6 +34,7 @@ let charTypes = [{
 }];
 
 // random number gen function (easier use in code)
+// got idea to make randomnumber function from w3 schools
 function randomNumber(max) {
   return Math.floor(Math.random() * max);
 }
