@@ -63,7 +63,7 @@ function generatePassword() {
     //assign true if should use, false if should NOT use
     charTypes[type].shouldInclude = confirm(`Click 'OK' to include: ${charTypes[type].displayName}`);
   }
-  // let i = 0; i < passLength;
+  
   // actual password generation
   while(passwordArray.length < passLength) {
 
