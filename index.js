@@ -43,18 +43,29 @@ function generatePassword() {
 
   // rough password array (will return as a string)
   let passwordArray = [];
+  // must define outside of while loop so I can use outside of while loop
+  let passLength;
 
-  // get passwords length
-  let passLength = prompt('Choose a password length from 8 - 128 characters:');
+  // makes sure your password is of adequet length
+  while(true) {
+    // get passwords length
+    passLength = prompt('Choose a password length from 8 - 128 characters:');
+    // get included characters (require at least 1)
+    if(passLength >= 8 && passLength <= 128) {
+      break;
+    } else {
+      alert('Password needs to be between 8 - 128 characters!');
+    }
+  }
   
-  // get included characters (require at least 1)
+
   for(type in charTypes) {
     //assign true if should use, false if should NOT use
     charTypes[type].shouldInclude = confirm(`Click 'OK' to include: ${charTypes[type].displayName}`);
   }
-  
+  // let i = 0; i < passLength;
   // actual password generation
-  for(let i = 0; i < passLength;) {
+  while(passwordArray.length < passLength) {
 
     // randomly select a type which shouldInclude = true
     let tempType = charTypes[randomNumber(charTypes.length - 1)];
@@ -65,8 +76,6 @@ function generatePassword() {
       let tempValue = tempType.values[randomNumber(tempType.values.length)];
       // push it to rough password
       passwordArray.push(tempValue);
-      // add to i here so it doesn't count values that arent included
-      i++
     }
 
   }
