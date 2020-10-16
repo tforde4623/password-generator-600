@@ -59,7 +59,7 @@ function generatePassword() {
     }
   }
   
-
+  // loop to assign which character types to use in generation by assigning shouldInclude true or false
   for(type in charTypes) {
     //assign true if should use, false if should NOT use
     charTypes[type].shouldInclude = confirm(`Click 'OK' to include: ${charTypes[type].displayName}`);
