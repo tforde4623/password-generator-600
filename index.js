@@ -69,7 +69,7 @@ function generatePassword() {
   while(passwordArray.length < passLength) {
 
     // randomly select a type which shouldInclude = true
-    let tempType = charTypes[randomNumber(charTypes.length - 1)];
+    let tempType = charTypes[randomNumber(charTypes.length)];
 
     // make sure that type was in the requested types, if not try again
     if(tempType.shouldInclude === true) {
